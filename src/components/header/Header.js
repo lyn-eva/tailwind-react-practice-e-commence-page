@@ -21,7 +21,7 @@ function Header() {
             <img src={logo} alt="sneakers" />
           </div>
           <nav className="ml-8 ">
-            <ul className={`absolute top-0 left-0 h-screen pl-8 pr-28 pt-20 bg-white shadow-md -translate-x-${navOn ? 0 : 60} duration-300 mobile:static mobile:flex gap-4 mobile:p-0 mobile:h-fit mobile:shadow-none mobile:translate-x-0`}>
+            <ul className={`absolute z-10 top-0 left-0 h-screen pl-8 pr-28 pt-20 bg-white shadow-md -translate-x-${navOn ? 0 : 60} duration-300 mobile:static mobile:flex gap-4 mobile:p-0 mobile:h-fit mobile:shadow-none mobile:translate-x-0`}>
               <img
                 className="absolute top-8 mobile:hidden"
                 onClick={menuClickHandler}

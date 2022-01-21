@@ -8,6 +8,10 @@ module.exports = {
       screens: {
         'mobile': "715px",
       },
+      backgroundImage: {
+        'left-arrow': "url('/src/images/icon-previous.svg')",
+        'right-arrow': "url('/src/images/icon-next.svg')"
+      }
     },
   },
   plugins: [],
