@@ -3,7 +3,10 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        orange: "hsl(26, 100%, 55%)",
+        'orange': "hsl(26, 100%, 55%)",
+      },
+      screens: {
+        'mobile': "715px",
       },
     },
   },
