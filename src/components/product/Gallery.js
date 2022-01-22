@@ -6,10 +6,10 @@ import iconPrev from "../../images/icon-previous.svg";
 function Gallery() {
   const [imgPos, setImgPos] = useState(0);
   const rightArrowHandler = () => {
-    return setImgPos((prevState) => (imgPos === 3 ? 0 : prevState + 1));
+    return setImgPos((prevState) => (imgPos === 3 ? 0 : ++prevState));
   };
   const leftArrowHandler = () => {
-    return setImgPos((prevState) => (imgPos === 0 ? 3 : prevState - 1));
+    return setImgPos((prevState) => (imgPos === 0 ? 3 : --prevState));
   };
 
   return (

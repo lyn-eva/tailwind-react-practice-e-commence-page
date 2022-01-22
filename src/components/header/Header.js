@@ -1,9 +1,9 @@
 import { useState } from "react";
 import logo from "../../images/logo.svg";
-import iconCart from "../../images/icon-cart.svg";
 import imageAvatar from "../../images/image-avatar.png";
 import iconClose from "../../images/icon-close.svg";
 import iconMenu from "../../images/icon-menu.svg";
+import Cart from "../cart/Cart";
 
 function Header() {
   const [navOn, setNavOn] = useState(false);
@@ -46,10 +46,8 @@ function Header() {
             </ul>
           </nav>
         </div>
-        <div className="flex items-center gap-8">
-          <button className="mobile:w-7 mobile:h-7">
-            <img className="h-full" src={iconCart} alt="cart" />
-          </button>
+        <div className="flex items-center gap-6">
+          <Cart />
           <div className="inline-block w-9 border-2 border-orange rounded-full mobile:w-12 mobile:border-[3px]">
             <img src={imageAvatar} />
           </div>
