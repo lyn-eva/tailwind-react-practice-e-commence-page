@@ -35,7 +35,7 @@ function Detail(props) {
           the weather can offer.
         </p>
       </div>
-      <div className="w-11/12 mx-auto mt-4 mb-20">
+      <div className="w-11/12 mx-auto mt-4 mb-20 mobile:mb-0">
         <div className="flex justify-between items-center">
           <p className="flex place-items-center text-[1.6rem] font-bold text-v-d-blue">
             ${props.price}

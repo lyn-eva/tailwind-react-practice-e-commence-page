@@ -41,10 +41,8 @@ function Cart() {
     setShowCart(prevState => !prevState);
   }
 
-  console.log('rerendered');
-
   return (
-    <div className="z-20 mobile:w-7 mobile:h-7">
+    <div className="z-10 mobile:w-7 mobile:h-7">
       <img onClick={cartClickHandler} className="h-full" src={iconCart} alt="cart" />
       <div className={`${showCart ? '' : 'hidden'} absolute top-20 left-1/2 -translate-x-1/2 w-[95%] p-6 bg-white rounded-lg shadow-md`}>
         <h3 className="text-1xl font-bold mb-4">Cart</h3>
