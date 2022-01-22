@@ -9,7 +9,6 @@ const initial = {
 const cartReducer = (state, action) => {
   switch (action.type) {
     case "ADD_ITEM":
-      const keys = Object.keys(state.items);
       let total = action.price * action.amount,
         amount = action.amount;
       if (action.name in state.items) {
@@ -24,10 +23,13 @@ const cartReducer = (state, action) => {
           [action.name]: {
             price: action.price,
             amount: amount,
-            total: total
+            total: total,
           },
         },
       };
+    case "REMOVE_ITEM":
+      delete state.items[action.name];
+      return state;
   }
   return state;
 };
@@ -43,13 +45,18 @@ function ContextProvider(props) {
       amount: amount,
     });
   };
+  const removeCartItem = (name) => {
+    dispatchCart({
+      type: "REMOVE_ITEM",
+      name: name,
+    });
+  };
 
   const provider = {
     ...cart,
     addCartItem: addCartItem,
+    removeCartItem: removeCartItem,
   };
-
-  console.log(cart);
 
   return <Context.Provider value={provider}>{props.children}</Context.Provider>;
 }
