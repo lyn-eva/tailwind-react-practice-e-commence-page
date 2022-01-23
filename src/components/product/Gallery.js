@@ -20,7 +20,7 @@ function Gallery() {
       <div className="relative">
         <span
           onClick={leftArrowHandler}
-          className="absolute top-1/2 left-4 w-10 h-10 z-10 bg-white shadow-md rounded-full md:hidden"
+          className="absolute top-1/2 -translate-y-1/2 left-4 w-10 h-10 z-10 bg-white shadow-md rounded-full md:hidden"
         >
           <img className="mt-3.5 ml-3.5 w-[9px]" src={iconPrev} alt="prev" />
         </span>
@@ -31,7 +31,7 @@ function Gallery() {
         />
         <span
           onClick={rightArrowHandler}
-          className="absolute top-1/2 right-4 w-10 h-10 z-10 bg-white shadow-md rounded-full md:hidden"
+          className="absolute top-1/2 right-4 -translate-y-1/2 w-10 h-10 z-10 bg-white shadow-md rounded-full md:hidden"
         >
           <img className="mt-3.5 ml-3.5 w-[9px]" src={iconNext} alt="next" />
         </span>
