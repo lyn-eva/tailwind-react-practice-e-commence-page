@@ -12,7 +12,7 @@ module.exports = {
         'black-75-op': 'hsl(0, 0%, 0%)'
       },
       screens: {
-        'mobile': "715px",
+        'mobile': "740px",
       },
       backgroundImage: {
         'left-arrow': "url('/src/images/icon-previous.svg')",
@@ -21,6 +21,11 @@ module.exports = {
         'icon-minus': "url('/src/images/icon-minus.svg')",
       }
     },
+  },
+  variants: {
+    extend: {
+      opacity: ["focus"]
+    }
   },
   plugins: [],
 };

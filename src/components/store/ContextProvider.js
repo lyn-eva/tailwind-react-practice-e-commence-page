@@ -29,7 +29,7 @@ const cartReducer = (state, action) => {
       };
     case "REMOVE_ITEM":
       delete state.items[action.name];
-      return state;
+      return {...state};// this is not redundant, it's mandatory for component rerendering, return only 'state' will result in no state change detected by context api
   }
   return state;
 };

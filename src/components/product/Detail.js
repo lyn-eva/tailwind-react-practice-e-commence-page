@@ -10,15 +10,15 @@ function Detail(props) {
   const ctx = useContext(Context);
 
   const amountAddHandler = () => {
-    setAmount(prevState => ++prevState)
-  }
+    setAmount((prevState) => ++prevState);
+  };
   const amountReduceHandler = () => {
-    setAmount(prevState => prevState === 0 ? 0 : --prevState)
-  }
+    setAmount((prevState) => (prevState === 0 ? 0 : --prevState));
+  };
   const addToCartHandler = () => {
     setAmount(0);
     ctx.addCartItem(props.name, props.price, amount);
-  }
+  };
 
   return (
     <div className="bg-white p-[0.05px]">
@@ -26,17 +26,15 @@ function Detail(props) {
         <h2 className="text-xs font-bold tracking-wider text-orange">
           SNEAKER COMPANY
         </h2>
-        <h1 className="text-3xl font-bold mt-2 text-v-d-blue">
-          {props.name}
-        </h1>
-        <p className="text-[15px] text-d-g-blue mt-3">
+        <h1 className="text-3xl font-bold mt-2 text-v-d-blue md:text-4xl md:mt-4">{props.name}</h1>
+        <p className="text-[15px] text-d-g-blue mt-3 md:mt-6">
           These low-profile sneakers are your perfect casual wear companion.
           Featuring a durable rubber outer sole, they'll withstand everything
           the weather can offer.
         </p>
       </div>
-      <div className="w-11/12 mx-auto mt-4 mb-20 mobile:mb-0">
-        <div className="flex justify-between items-center">
+      <div className="w-11/12 mx-auto mt-4 mb-20 md:mb-0 md:mt-6">
+        <div className="flex justify-between items-center md:block">
           <p className="flex place-items-center text-[1.6rem] font-bold text-v-d-blue">
             ${props.price}
             <span className="inline-block font-bold text-[15px] text-orange bg-pale-orange py-[2px] px-[4px] ml-3 rounded">
@@ -47,25 +45,25 @@ function Detail(props) {
             ${props.price}
           </span>
         </div>
-        <div className="flex justify-between items-center px-6 py-3.5 mt-5 rounded-md bg-l-g-blue">
-          <span onClick={amountReduceHandler} className="w-4">
-            <img className="w-full" src={minusIcon} alt="minus" />
-          </span>
-          <span className="font-bold text-2xl">{amount}</span>
-          <span onClick={amountAddHandler} className="w-4">
-            <img className="w-full" src={plusIcon} alt="minus" />
-          </span>
+        <div className='md:flex items-center gap-4 md:mt-4'>
+          <div className="flex justify-between items-center px-5 py-[10px] mt-5 rounded-md bg-l-g-blue md:w-2/3">
+            <span onClick={amountReduceHandler} className="w-4 hover:cursor-pointer">
+              <img className="w-full" src={minusIcon} alt="minus" />
+            </span>
+            <span className="font-bold text-2xl">{amount}</span>
+            <span onClick={amountAddHandler} className="w-4 hover:cursor-pointer">
+              <img className="w-full" src={plusIcon} alt="minus" />
+            </span>
+          </div>
+          <Button onClick={addToCartHandler}>
+            <img
+              className="inline brightness-0 invert w-5 mr-2 -mt-1"
+              src={cartIcon}
+              alt="cart"
+            />
+            Add to Cart
+          </Button>
         </div>
-        <Button
-          onClick={addToCartHandler}
-        >
-          <img
-            className="inline brightness-0 invert w-5 mr-4 -mt-1"
-            src={cartIcon}
-            alt="cart"
-          />
-          Add to Cart
-        </Button>
       </div>
     </div>
   );

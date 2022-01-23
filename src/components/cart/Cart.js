@@ -5,13 +5,12 @@ import { previewImg } from "../product/img-path";
 import Button from "../button/Button";
 import Context from "../store/Context";
 
-const generateItems = (context, forceRender) => {
+const generateItems = (context) => {
   return Object.keys(context.items).map((ItemName) => {
     const item = context.items[ItemName];
 
     const deleteHandler = () => {
       context.removeCartItem(ItemName);
-      forceRender(prevState => !prevState); // last resolve
     }
 
     return (
@@ -33,9 +32,8 @@ const generateItems = (context, forceRender) => {
 
 function Cart() {
   const [showCart, setShowCart] = useState(false);
-  const [render, setRender] = useState(true);
   const ctx = useContext(Context);
-  const cartItems = generateItems(ctx, setRender);
+  const cartItems = generateItems(ctx);
 
   const cartClickHandler = () => {
     setShowCart(prevState => !prevState);
@@ -43,8 +41,8 @@ function Cart() {
 
   return (
     <div className="z-10 mobile:w-7 mobile:h-7">
-      <img onClick={cartClickHandler} className="h-full" src={iconCart} alt="cart" />
-      <div className={`${showCart ? '' : 'hidden'} absolute top-20 left-1/2 -translate-x-1/2 w-[95%] p-6 bg-white rounded-lg shadow-md`}>
+      <img onClick={cartClickHandler} className="h-full hover:cursor-pointer" src={iconCart} alt="cart" />
+      <div className={`${showCart ? '' : 'hidden'} absolute top-20 left-1/2 -translate-x-1/2 w-[95%] p-6 bg-white rounded-lg shadow-md mobile:top-28 mobile:shadow-lg md:w-96 md:left-auto md:right-6 md:transform-none`}>
         <h3 className="text-1xl font-bold mb-4">Cart</h3>
         <hr />
         <ul className='mt-5 text-center'>{cartItems.length ? cartItems : 'no item'}</ul>
