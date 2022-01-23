@@ -18,7 +18,7 @@ function Header() {
         <div className="flex justify-between py-4 mx-auto w-11/12 max-w-7xl mobile:py-5">
           <div className="flex items-center">
             <img
-              className="mr-4 mobile:hidden"
+              className="mr-4 mobile:hidden hover:cursor-pointer"
               onClick={menuClickHandler}
               src={iconMenu}
               alt="menu"
@@ -28,7 +28,7 @@ function Header() {
             </div>
             <nav className="ml-8 ">
               <ul
-                className={'absolute z-20 top-0 left-0 h-screen pl-8 pr-28 pt-20 bg-white shadow-md -translate-x-60 transform duration-300 mobile:static mobile:flex gap-4 mobile:p-0 mobile:h-fit mobile:shadow-none mobile:translate-x-0'}
+                className={`absolute z-20 top-0 left-0 h-screen pl-8 pr-28 pt-20 bg-white shadow-md -translate-x-60 ${navOn ? 'translate-x-0' : ''} transform duration-300 mobile:static mobile:flex gap-4 mobile:p-0 mobile:h-fit mobile:shadow-none mobile:translate-x-0`}
               >
                 <img
                   className="absolute top-8 mobile:hidden"
@@ -36,19 +36,19 @@ function Header() {
                   src={iconClose}
                   alt="close"
                 />
-                <li className="font-bold mobile:font-normal">
+                <li className='hdr-menu-item'>
                   <a href="">Collections</a>
                 </li>
-                <li className="font-bold mt-3 mobile:font-normal mobile:mt-0">
+                <li className="hdr-menu-item">
                   <a href="">Men</a>
                 </li>
-                <li className="font-bold mt-3 mobile:font-normal mobile:mt-0">
+                <li className="hdr-menu-item">
                   <a href="">Women</a>
                 </li>
-                <li className="font-bold mt-3 mobile:font-normal mobile:mt-0">
+                <li className="hdr-menu-item">
                   <a href="">About</a>
                 </li>
-                <li className="font-bold mt-3 mobile:font-normal mobile:mt-0">
+                <li className="hdr-menu-item">
                   <a href="">Contact</a>
                 </li>
               </ul>

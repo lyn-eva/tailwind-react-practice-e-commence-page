@@ -17,6 +17,7 @@ function Detail(props) {
   };
   const addToCartHandler = () => {
     setAmount(0);
+    if (!amount) return;
     ctx.addCartItem(props.name, props.price, amount);
   };
 

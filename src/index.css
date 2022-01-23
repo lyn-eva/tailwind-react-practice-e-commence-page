@@ -5,5 +5,11 @@
 @tailwind utilities;
 
 * {
-  font-family: 'Kumbh Sans', sans-serif;
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+@layer components {
+  .hdr-menu-item {
+    @apply font-bold mb-4 mobile:mb-0 mobile:font-normal relative after:absolute after:top-14 after:left-0 after:content-[''] after:w-full mobile:hover:after:h-1 after:bg-orange;
+  }
 }

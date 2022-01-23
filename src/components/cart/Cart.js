@@ -24,7 +24,7 @@ const generateItems = (context) => {
             <span className='text-v-d-blue font-bold ml-3'>${item.total}.00</span>
           </p>
         </div>
-        <img onClick={deleteHandler} className='absolute right-2 top-4' src={iconDelete} alt='delete'/>
+        <img onClick={deleteHandler} className='absolute right-2 top-4 hover:cursor-pointer' src={iconDelete} alt='delete'/>
       </li>
     );
   });
